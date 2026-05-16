@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#08050f">
+<title>Verto Media Global — Premium Digital Marketing Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --bg:#08050f;--bg-2:#0d0a18;--card:#15101f;--card-2:#1a1428;
+  --purple:#7c5cff;--purple-2:#9d7eff;--purple-3:#5b3ee8;--purple-dark:#4527d4;
+  --purple-light:#b8a5ff;
+  --glow:rgba(124,92,255,.5);
+  --green:#10b981;
+  --text:#fff;--text-2:#a8a3c4;--text-3:#6b6688;
+  --border:rgba(124,92,255,.12);--border-h:rgba(124,92,255,.35);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:'Inter',-apple-system,sans-serif;background:#000;color:#fff;overflow-x:hidden;font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;position:relative;min-height:100vh}
+
+/* ============ HERO with WORKLY-style background ============ */
+.hero-wrap{position:relative;background:radial-gradient(ellipse 80% 60% at 50% -10%,#3d1f7a 0%,#1a0d3d 20%,#08050f 50%,#000 100%);overflow:hidden;padding-bottom:0}
+.hero-wrap::before{content:'';position:absolute;left:50%;top:80px;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(124,92,255,.3) 0%,transparent 60%);transform:translateX(-50%);filter:blur(40px);pointer-events:none}
+
+/* CONCENTRIC RINGS (Workly signature) */
+.rings{position:absolute;left:50%;top:120px;transform:translateX(-50%);pointer-events:none;z-index:1}
+.ring{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(124,92,255,.2);box-shadow:inset 0 0 30px rgba(124,92,255,.1)}
+.ring-1{width:400px;height:400px;border-color:rgba(124,92,255,.35);box-shadow:inset 0 0 40px rgba(124,92,255,.2),0 0 30px rgba(124,92,255,.15)}
+.ring-2{width:600px;height:600px;border-color:rgba(124,92,255,.22)}
+.ring-3{width:850px;height:850px;border-color:rgba(124,92,255,.14)}
+.ring-4{width:1150px;height:1150px;border-color:rgba(124,92,255,.08)}
+.ring-5{width:1500px;height:1500px;border-color:rgba(124,92,255,.05)}
+
+/* Stars */
+.stars{position:absolute;inset:0;pointer-events:none;z-index:2}
+.star{position:absolute;border-radius:50%;background:#fff;animation:twinkle 3s ease infinite}
+@keyframes twinkle{0%,100%{opacity:.2}50%{opacity:1;box-shadow:0 0 4px #fff}}
+
+/* ANNOUNCE */
+.announce{position:relative;z-index:101;background:linear-gradient(90deg,var(--purple-3),var(--purple),var(--purple-3));background-size:200% 100%;animation:annGrad 6s linear infinite;color:#fff;padding:9px 0;overflow:hidden}
+@keyframes annGrad{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.announce-track{display:flex;width:max-content;animation:annMarq 30s linear infinite;white-space:nowrap}
+@keyframes annMarq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.announce span{font-size:12px;font-weight:600;padding:0 22px;display:inline-flex;align-items:center;gap:18px;letter-spacing:.5px}
+.announce span::after{content:'✦';margin-left:18px;font-size:10px;opacity:.6}
+
+/* NAV - Workly pill style */
+.nav{position:fixed;top:50px;left:18px;right:18px;z-index:100;padding:10px 14px 10px 18px;background:rgba(15,12,28,.8);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--border);border-radius:100px;display:flex;align-items:center;justify-content:space-between;transition:top .3s;max-width:1100px;margin:0 auto}
+.nav.scrolled{top:14px}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:#fff}
+.logo-img{width:30px;height:30px;display:flex;align-items:center;justify-content:center;filter:brightness(0) invert(1) drop-shadow(0 0 8px var(--glow))}
+.logo-img img{width:100%;height:100%;object-fit:contain}
+.logo-text{font-weight:700;font-size:17px;letter-spacing:-.5px}
+.nav-mid{display:none}
+.nav-right{display:flex;align-items:center;gap:8px}
+.lang-switch{display:flex;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:100px;padding:2px}
+.lang-btn{padding:5px 10px;background:transparent;color:var(--text-2);font-size:10px;font-weight:700;letter-spacing:.5px;border:none;cursor:pointer;border-radius:100px;transition:.25s}
+.lang-btn.active{background:var(--purple);color:#fff}
+.nav-cta{padding:8px 18px;background:var(--purple);color:#fff;text-decoration:none;font-size:12px;font-weight:600;border-radius:100px;transition:.25s;display:none}
+.nav-cta:hover{background:var(--purple-2)}
+.burger{width:34px;height:34px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;cursor:pointer}
+.burger span{width:14px;height:1.5px;background:#fff;border-radius:2px;transition:.3s}
+.burger.open span:nth-child(1){transform:translateY(5px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-4px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:110px;left:18px;right:18px;background:rgba(15,12,28,.98);backdrop-filter:blur(20px);border:1px solid var(--border);border-radius:18px;z-index:99;padding:18px;transform:translateY(-150%);transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
+.mobile-menu.open{transform:translateY(0)}
+.mobile-menu a{display:block;padding:12px 0;color:#fff;text-decoration:none;font-size:14px;font-weight:600;border-bottom:1px solid var(--border)}
+.mobile-menu a:last-child{border-bottom:none}
+
+/* HERO CONTENT */
+.hero{position:relative;z-index:5;padding:140px 18px 60px;text-align:center}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:rgba(124,92,255,.15);border:1px solid var(--border-h);border-radius:100px;font-size:11px;font-weight:600;color:var(--purple-light);letter-spacing:.5px;margin-bottom:24px;animation:fadeUp .8s both;backdrop-filter:blur(10px)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+.hero-tag .dot{width:6px;height:6px;background:var(--green);border-radius:50%;box-shadow:0 0 8px var(--green);animation:pulse 1.5s ease infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-size:42px;font-weight:700;line-height:1.05;letter-spacing:-2px;margin-bottom:22px;animation:slideUp .8s .1s both;max-width:720px;margin-left:auto;margin-right:auto}
+@keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.hero p{font-size:15px;color:var(--text-2);max-width:480px;line-height:1.6;margin:0 auto 30px;animation:slideUp .8s .3s both}
+.hero-cta{display:flex;flex-direction:column;gap:10px;max-width:280px;margin:0 auto 50px;animation:slideUp .9s .5s both}
+.btn-text{padding:14px 26px;color:#fff;text-decoration:none;font-size:13px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:6px;transition:.25s;background:transparent;border:none;cursor:pointer}
+.btn-text:hover{color:var(--purple-light)}
+.btn-text svg{width:12px;height:12px}
+.btn-primary{padding:13px 26px;background:var(--purple);color:#fff;font-size:13px;font-weight:600;border:none;border-radius:100px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:all .3s;box-shadow:0 8px 25px var(--glow)}
+.btn-primary:hover{background:var(--purple-2);transform:translateY(-2px)}
+.btn-primary svg{width:14px;height:14px}
+
+/* DASHBOARD MOCKUP (Workly signature centered) */
+.mockup{position:relative;z-index:5;max-width:900px;margin:0 auto;padding:0 12px;animation:fadeUp 1.2s .7s both}
+.mockup-frame{background:linear-gradient(135deg,#1a1428,#0d0a18);border:1px solid var(--border-h);border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 60px rgba(124,92,255,.2);position:relative}
+.mockup-top{display:flex;align-items:center;gap:6px;padding:10px 14px;background:rgba(0,0,0,.4);border-bottom:1px solid var(--border)}
+.mockup-dot{width:10px;height:10px;border-radius:50%}
+.mockup-dot.r{background:#ff5f57}
+.mockup-dot.y{background:#ffbd2e}
+.mockup-dot.g{background:#28c840}
+.mockup-url{flex:1;margin-left:14px;padding:5px 14px;background:rgba(255,255,255,.05);border-radius:6px;font-size:10px;color:var(--text-3);font-family:monospace;text-align:center}
+.mockup-body{padding:18px;display:grid;grid-template-columns:1fr;gap:14px}
+.mockup-side{display:flex;flex-direction:column;gap:8px}
+.mockup-side-item{padding:7px 10px;font-size:11px;color:var(--text-2);border-radius:6px;display:flex;align-items:center;gap:8px}
+.mockup-side-item.active{background:rgba(124,92,255,.15);color:#fff}
+.mockup-side-item .ic{width:14px;height:14px;background:rgba(124,92,255,.3);border-radius:3px}
+.mockup-main{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mockup-stat{padding:10px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:8px}
+.mockup-stat-l{font-size:9px;color:var(--text-3);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.mockup-stat-v{font-size:18px;font-weight:700;color:#fff}
+.mockup-stat-v.purple{color:var(--purple-light)}
+.mockup-list{grid-column:1/-1;display:flex;flex-direction:column;gap:5px}
+.mockup-row{display:flex;align-items:center;gap:8px;padding:7px 10px;background:rgba(255,255,255,.02);border-radius:6px;font-size:10px}
+.mockup-row .chk{width:13px;height:13px;border:1.5px solid var(--border-h);border-radius:3px;flex-shrink:0}
+.mockup-row.done .chk{background:var(--purple);border-color:var(--purple)}
+.mockup-row.done .chk::after{content:'✓';color:#fff;font-size:8px;display:block;text-align:center;line-height:11px}
+.mockup-row span{color:var(--text-2);flex:1}
+.mockup-row .badge{font-size:8px;padding:2px 6px;background:rgba(124,92,255,.2);color:var(--purple-light);border-radius:100px;letter-spacing:.5px;text-transform:uppercase;font-weight:700}
+
+/* TRUSTED */
+.trusted{padding:50px 18px 30px;text-align:center;background:#000;position:relative;z-index:5}
+.trusted-label{font-size:11px;color:var(--text-3);letter-spacing:1px;margin-bottom:22px;font-weight:500}
+.trusted-logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:18px 30px;opacity:.7}
+.trusted-logo{font-weight:700;font-size:17px;color:var(--text-2);letter-spacing:-.5px;font-family:'Inter',sans-serif}
+
+/* ============ DARK SECTIONS ============ */
+.dark-section{background:#000;position:relative;padding:80px 18px}
+.dark-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 50% 0%,rgba(124,92,255,.08),transparent 50%);pointer-events:none}
+.dark-section>*{position:relative;z-index:1}
+
+/* SECTION HEADERS */
+.sh{margin-bottom:36px;max-width:680px}
+.sh-center{text-align:center;margin-left:auto;margin-right:auto}
+.sh-pill{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.3);border-radius:100px;font-size:11px;font-weight:600;color:var(--green);margin-bottom:16px}
+.sh-pill.purple{background:rgba(124,92,255,.15);border-color:var(--border-h);color:var(--purple-light)}
+.sh-pill .heart{font-size:11px}
+.sh h2{font-size:32px;font-weight:700;letter-spacing:-1.5px;line-height:1.05;margin-bottom:14px}
+.sh h2 .grad{background:linear-gradient(135deg,var(--purple-light),var(--purple));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sh p{font-size:14px;color:var(--text-2);line-height:1.6;max-width:540px}
+.sh-center p{margin:0 auto}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(50px);transition:opacity .8s cubic-bezier(.34,1.56,.64,1),transform .8s cubic-bezier(.34,1.56,.64,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.r-d1{transition-delay:.1s}.r-d2{transition-delay:.2s}.r-d3{transition-delay:.3s}.r-d4{transition-delay:.4s}
+
+/* ============ BENEFITS (Workly 2-card style) ============ */
+.benefits-grid{display:grid;grid-template-columns:1fr;gap:14px;max-width:1100px;margin:0 auto}
+.bcard{background:linear-gradient(180deg,var(--card),var(--bg-2));border:1px solid var(--border);border-radius:20px;padding:24px;position:relative;overflow:hidden;min-height:280px;transition:all .4s cubic-bezier(.34,1.56,.64,1)}
+.bcard:hover{border-color:var(--border-h);transform:translateY(-4px);box-shadow:0 24px 50px rgba(124,92,255,.15)}
+.bcard-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;background:rgba(124,92,255,.15);border-radius:100px;font-size:10px;color:var(--purple-light);font-weight:600;margin-bottom:12px}
+.bcard h3{font-size:22px;font-weight:700;letter-spacing:-.5px;margin-bottom:8px}
+.bcard h3 .h{color:var(--purple-light)}
+.bcard p{font-size:13px;color:var(--text-2);line-height:1.6;margin-bottom:20px}
+.bcard-vis{position:relative;height:140px;display:flex;align-items:center;justify-content:center}
+/* Cloud Backup visual */
+.cloud-vis{position:relative;width:100%;height:100%}
+.cloud-orb{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:90px;height:90px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--purple-2),var(--purple-3));box-shadow:0 0 50px var(--glow),inset -10px -10px 30px rgba(0,0,0,.4);animation:cloudFloat 4s ease infinite;display:flex;align-items:center;justify-content:center}
+@keyframes cloudFloat{0%,100%{transform:translate(-50%,-50%) translateY(0)}50%{transform:translate(-50%,-50%) translateY(-8px)}}
+.cloud-orb svg{width:42px;height:42px;color:#fff;filter:drop-shadow(0 0 8px rgba(255,255,255,.5))}
+.cloud-pt{position:absolute;width:4px;height:4px;background:var(--purple-light);border-radius:50%;box-shadow:0 0 6px var(--purple);animation:cloudPt 3s ease infinite}
+.cloud-pt.p1{top:20%;left:30%;animation-delay:0s}
+.cloud-pt.p2{top:30%;right:25%;animation-delay:.5s}
+.cloud-pt.p3{bottom:20%;left:35%;animation-delay:1s}
+.cloud-pt.p4{bottom:30%;right:30%;animation-delay:1.5s}
+@keyframes cloudPt{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:1;transform:scale(1.5)}}
+/* Search bar visual */
+.search-vis{position:relative;display:flex;align-items:center;width:100%;max-width:280px;padding:12px 16px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:100px}
+.search-vis svg{width:16px;height:16px;color:var(--text-3);margin-right:10px}
+.search-vis input{flex:1;background:transparent;border:none;color:var(--text-2);font-size:12px;outline:none;font-family:inherit}
+/* Integrations icons */
+.int-vis{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:280px;margin:0 auto}
+.int-icon{width:38px;height:38px;background:linear-gradient(135deg,rgba(124,92,255,.2),rgba(124,92,255,.05));border:1px solid var(--border-h);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:18px;animation:intFloat 3s ease infinite}
+.int-icon:nth-child(2){animation-delay:.3s}
+.int-icon:nth-child(3){animation-delay:.6s}
+.int-icon:nth-child(4){animation-delay:.9s}
+.int-icon:nth-child(5){animation-delay:1.2s}
+.int-icon:nth-child(6){animation-delay:1.5s}
+@keyframes intFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+
+/* ============ TIMELINE (Workly Get Set Up style) ============ */
+.timeline{position:relative;max-width:900px;margin:0 auto;padding:30px 0}
+.timeline-svg{position:absolute;left:0;right:0;top:0;height:100%;width:100%;pointer-events:none;display:none}
+.tl-steps{display:flex;flex-direction:column;gap:30px}
+.tl-step{background:linear-gradient(180deg,var(--card),var(--bg-2));border:1px solid var(--border);border-radius:18px;padding:24px;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1}
+.tl-num{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--purple-3));display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:#fff;margin-bottom:14px;box-shadow:0 8px 24px var(--glow)}
+.tl-step h4{font-size:16px;font-weight:700;margin-bottom:6px;letter-spacing:-.3px}
+.tl-step p{font-size:12px;color:var(--text-2);line-height:1.5;max-width:200px}
+
+/* ============ TESTIMONIALS / TEAMS Switched ============ */
+.team-grid{display:grid;grid-template-columns:1fr;gap:14px;max-width:1100px;margin:0 auto}
+.tcard{background:linear-gradient(180deg,var(--card),var(--bg-2));border:1px solid var(--border);border-radius:18px;padding:22px;text-align:center;transition:.3s}
+.tcard:hover{border-color:var(--border-h);transform:translateY(-4px)}
+.tcard-avatar{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--purple-3));margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;color:#fff;box-shadow:0 8px 20px var(--glow)}
+.tcard-name{font-size:14px;font-weight:700;margin-bottom:3px}
+.tcard-role{font-size:11px;color:var(--text-3);margin-bottom:14px;letter-spacing:.3px}
+.tcard-stars{display:flex;justify-content:center;gap:2px;margin-bottom:10px;color:#fbbf24}
+.tcard-quote{font-size:12.5px;color:var(--text-2);line-height:1.6;font-style:italic}
+
+/* ============ PRICING (Workly style 3 cards) ============ */
+.price-grid{display:grid;grid-template-columns:1fr;gap:14px;max-width:1100px;margin:0 auto}
+.pcard{background:linear-gradient(180deg,var(--card),var(--bg-2));border:1px solid var(--border);border-radius:20px;padding:28px 24px;position:relative;transition:all .4s cubic-bezier(.34,1.56,.64,1);overflow:hidden}
+.pcard.featured{background:linear-gradient(180deg,#3d1f7a 0%,#1a0d3d 100%);border:1px solid var(--purple);box-shadow:0 0 50px rgba(124,92,255,.3)}
+.pcard:hover{transform:translateY(-4px)}
+.pcard-pop{position:absolute;top:14px;right:14px;background:rgba(124,92,255,.2);border:1px solid var(--purple);padding:3px 10px;border-radius:100px;font-size:9px;font-weight:700;color:var(--purple-light);letter-spacing:1px;text-transform:uppercase}
+.pcard-name{font-size:14px;font-weight:700;color:var(--text-2);margin-bottom:18px;letter-spacing:.5px;text-transform:uppercase}
+.pcard.featured .pcard-name{color:#fff}
+.pcard-price{font-size:46px;font-weight:800;line-height:1;margin-bottom:6px;letter-spacing:-2px}
+.pcard-price small{font-size:13px;color:var(--text-3);font-weight:500;letter-spacing:0;margin-left:4px}
+.pcard-desc{font-size:12px;color:var(--text-2);margin-bottom:22px;line-height:1.5}
+.pcard-btn{display:block;width:100%;padding:13px;background:rgba(255,255,255,.06);color:#fff;text-align:center;border:1px solid var(--border-h);border-radius:100px;font-size:12px;font-weight:600;text-decoration:none;cursor:pointer;transition:.25s;margin-bottom:24px}
+.pcard-btn:hover{background:rgba(124,92,255,.2);border-color:var(--purple)}
+.pcard.featured .pcard-btn{background:#fff;color:#000;border:none}
+.pcard.featured .pcard-btn:hover{background:var(--purple-light)}
+.pcard-features{list-style:none;display:flex;flex-direction:column;gap:8px}
+.pcard-features li{font-size:12.5px;color:var(--text-2);display:flex;align-items:flex-start;gap:8px;line-height:1.5}
+.pcard-features li svg{width:14px;height:14px;color:var(--purple-light);flex-shrink:0;margin-top:2px}
+.pcard.featured .pcard-features li{color:var(--text)}
+
+/* ============ FAQ (Workly accordion) ============ */
+.faq-list{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.faq-item{background:linear-gradient(180deg,var(--card),var(--bg-2));border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:.25s}
+.faq-item.open{border-color:var(--border-h)}
+.faq-q{padding:18px 20px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-size:13.5px;font-weight:600;color:#fff;gap:14px}
+.faq-icon{width:22px;height:22px;border-radius:50%;background:rgba(124,92,255,.15);border:1px solid var(--border-h);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s;color:var(--purple-light);font-size:14px;font-weight:700}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--purple);color:#fff;border-color:var(--purple)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 20px}
+.faq-item.open .faq-a{max-height:240px;padding-bottom:18px}
+.faq-a p{font-size:13px;color:var(--text-2);line-height:1.6}
+
+/* ============ FINAL CTA ============ */
+.final-cta{position:relative;padding:80px 18px;text-align:center;overflow:hidden}
+.final-cta::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(124,92,255,.4),transparent 60%);filter:blur(40px);pointer-events:none}
+.final-cta>div{position:relative;z-index:1}
+.final-rings{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:500px;height:500px;pointer-events:none}
+.final-ring{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(124,92,255,.2)}
+.final-ring.f1{width:200px;height:200px;border-color:rgba(124,92,255,.4)}
+.final-ring.f2{width:320px;height:320px;border-color:rgba(124,92,255,.25)}
+.final-ring.f3{width:440px;height:440px;border-color:rgba(124,92,255,.12)}
+.final-cta h2{font-size:38px;font-weight:700;letter-spacing:-1.5px;line-height:1.05;margin-bottom:14px;max-width:480px;margin-left:auto;margin-right:auto}
+.final-cta p{font-size:14px;color:var(--text-2);margin-bottom:24px;max-width:380px;margin-left:auto;margin-right:auto;line-height:1.6}
+
+/* ============ FOOTER (Workly style) ============ */
+footer{background:#000;border-top:1px solid var(--border);padding:50px 18px 24px}
+.foot-inner{max-width:1100px;margin:0 auto}
+.foot-top{display:flex;flex-direction:column;gap:30px;margin-bottom:36px}
+.foot-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.foot-logo-img{width:36px;height:36px;filter:brightness(0) invert(1) drop-shadow(0 0 8px var(--glow))}
+.foot-logo-img img{width:100%;height:100%;object-fit:contain}
+.foot-logo-text{font-weight:700;font-size:20px;letter-spacing:-.5px}
+.foot-tag{font-size:13px;color:var(--text-2);line-height:1.6;max-width:260px;margin-bottom:16px}
+.foot-langs{display:flex;flex-wrap:wrap;gap:6px}
+.foot-lang{font-size:9px;font-weight:600;color:var(--text-2);letter-spacing:1px;text-transform:uppercase;padding:4px 10px;background:rgba(124,92,255,.08);border:1px solid var(--border);border-radius:100px}
+.foot-cols{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.foot-col h4{font-size:11px;font-weight:700;color:#fff;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px}
+.foot-col a{display:block;padding:5px 0;color:var(--text-2);text-decoration:none;font-size:13px;transition:color .25s}
+.foot-col a:hover{color:var(--purple-light)}
+.foot-bottom{padding-top:20px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.foot-soc{display:flex;gap:8px;flex-wrap:wrap}
+.fsc{width:34px;height:34px;background:rgba(124,92,255,.06);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:.25s}
+.fsc:hover{background:var(--purple);border-color:var(--purple);transform:translateY(-2px)}
+.fsc svg{width:14px;height:14px}
+.foot-copy{font-size:10px;color:var(--text-3);letter-spacing:.5px;font-weight:500}
+
+/* WHATSAPP */
+.wa{position:fixed;bottom:20px;right:20px;width:54px;height:54px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;z-index:99;text-decoration:none;box-shadow:0 8px 24px rgba(37,211,102,.5);animation:wb 2s ease infinite}
+@keyframes wb{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.wa::before{content:'';position:absolute;inset:-4px;border-radius:50%;border:2px solid #25D366;animation:wr 2s ease infinite}
+@keyframes wr{0%{transform:scale(.9);opacity:1}100%{transform:scale(1.5);opacity:0}}
+.wa svg{width:26px;height:26px;fill:#fff;position:relative;z-index:1}
+
+/* MODAL */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.9);backdrop-filter:blur(10px);display:none;align-items:flex-end;justify-content:center;z-index:200}
+.modal.open{display:flex;animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal-content{background:#0d0a18;border-top:1px solid var(--purple);border-radius:24px 24px 0 0;padding:24px;width:100%;max-width:480px;position:relative;max-height:90vh;overflow-y:auto;animation:modalSlide .4s cubic-bezier(.34,1.56,.64,1)}
+@keyframes modalSlide{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.modal-close{position:absolute;top:14px;right:14px;width:34px;height:34px;background:rgba(255,255,255,.08);border:none;border-radius:50%;color:#fff;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
+.modal-handle{width:40px;height:4px;background:rgba(255,255,255,.2);border-radius:100px;margin:0 auto 16px}
+.modal-icon{width:56px;height:56px;background:linear-gradient(135deg,var(--purple),var(--purple-3));border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;color:#fff;box-shadow:0 12px 30px var(--glow)}
+.modal-icon svg{width:26px;height:26px}
+.modal-content h3{font-size:19px;font-weight:700;text-align:center;margin-bottom:6px;letter-spacing:-.4px}
+.modal-content>p{text-align:center;font-size:12.5px;color:var(--text-2);margin-bottom:20px;line-height:1.5}
+.mod-options{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+.mod-opt{display:flex;align-items:center;gap:12px;padding:14px;background:rgba(255,255,255,.04);border:1.5px solid var(--border);border-radius:12px;cursor:pointer;text-decoration:none;color:#fff;transition:.25s}
+.mod-opt:hover{border-color:var(--purple);background:rgba(124,92,255,.08)}
+.mod-opt.wa-opt:hover{border-color:#25D366;background:rgba(37,211,102,.08)}
+.mod-opt-ico{width:38px;height:38px;border-radius:10px;background:rgba(124,92,255,.15);display:flex;align-items:center;justify-content:center;color:var(--purple-light);flex-shrink:0}
+.mod-opt.wa-opt .mod-opt-ico{background:rgba(37,211,102,.15);color:#25D366}
+.mod-opt-ico svg{width:18px;height:18px}
+.mod-opt-info{flex:1;min-width:0}
+.mod-opt-title{font-size:13px;font-weight:700;margin-bottom:2px}
+.mod-opt-desc{font-size:11px;color:var(--text-2);line-height:1.4}
+.email-form{display:none;margin-top:12px}
+.email-form.show{display:block;animation:fadeIn .3s ease}
+.email-form input,.email-form textarea{width:100%;padding:12px 14px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:10px;color:#fff;font-family:inherit;font-size:13px;margin-bottom:9px;outline:none;transition:.25s}
+.email-form input:focus,.email-form textarea:focus{border-color:var(--purple)}
+.email-form textarea{resize:vertical;min-height:80px}
+.email-form input::placeholder,.email-form textarea::placeholder{color:var(--text-3)}
+.email-form button{width:100%;padding:13px;background:var(--purple);color:#fff;border:none;border-radius:10px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:.25s;margin-top:4px;box-shadow:0 8px 20px var(--glow);display:flex;align-items:center;justify-content:center;gap:6px}
+.email-form button:hover{background:var(--purple-2)}
+.email-form button svg{width:13px;height:13px}
+.form-success{display:none;text-align:center;padding:24px 20px;animation:fadeIn .4s ease}
+.form-success.show{display:block}
+.form-success svg{width:54px;height:54px;color:var(--green);margin-bottom:14px}
+.form-success h4{font-size:18px;font-weight:700;margin-bottom:6px}
+.form-success p{font-size:12.5px;color:var(--text-2);line-height:1.5}
+
+/* DESKTOP */
+@media(min-width:768px){
+  body{font-size:16px}
+  .nav{padding:10px 14px 10px 22px}
+  .nav-mid{display:flex;gap:24px;align-items:center;font-size:13px;font-weight:500}
+  .nav-mid a{color:var(--text-2);text-decoration:none;transition:.25s}
+  .nav-mid a:hover{color:#fff}
+  .nav-cta{display:inline-flex}
+  .burger{display:none}
+  
+  .hero{padding:170px 40px 70px}
+  .hero h1{font-size:62px}
+  .hero p{font-size:17px;max-width:540px}
+  .hero-cta{flex-direction:row;max-width:none;justify-content:center}
+  
+  .mockup{padding:0 40px}
+  .mockup-body{grid-template-columns:180px 1fr;padding:22px}
+  
+  .ring-1{width:500px;height:500px}
+  .ring-2{width:720px;height:720px}
+  .ring-3{width:980px;height:980px}
+  .ring-4{width:1300px;height:1300px}
+  .ring-5{width:1700px;height:1700px}
+  
+  .trusted-logos{gap:20px 50px}
+  .trusted-logo{font-size:22px}
+  
+  .dark-section{padding:100px 40px}
+  .sh h2{font-size:46px}
+  
+  .benefits-grid{grid-template-columns:1fr 1fr;gap:18px}
+  .bcard{padding:32px;min-height:340px}
+  .bcard h3{font-size:26px}
+  
+  .timeline{padding:40px 0}
+  .tl-steps{flex-direction:row;justify-content:space-between;gap:16px}
+  .tl-step{flex:1}
+  .timeline-svg{display:block}
+  
+  .team-grid{grid-template-columns:repeat(3,1fr);gap:18px}
+  .tcard{padding:28px}
+  
+  .price-grid{grid-template-columns:repeat(3,1fr);align-items:stretch}
+  .pcard{display:flex;flex-direction:column}
+  .pcard-features{flex:1}
+  
+  .final-cta{padding:120px 40px}
+  .final-cta h2{font-size:56px}
+  
+  .foot-top{flex-direction:row;justify-content:space-between;gap:60px}
+  .foot-brand{flex-shrink:0;max-width:280px}
+  .foot-cols{grid-template-columns:repeat(4,1fr);gap:30px;flex:1}
+  .foot-bottom{flex-direction:row;justify-content:space-between;align-items:center}
+  
+  .announce span{font-size:13px}
+  .wa{width:60px;height:60px;bottom:24px;right:24px}
+  .wa svg{width:30px;height:30px}
+  
+  .modal{align-items:center}
+  .modal-content{border-radius:20px;max-width:480px;border:1px solid var(--purple)}
+  .modal-handle{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="announce">
+  <div class="announce-track">
+    <span data-en="✨ International digital marketing agency" data-es="✨ Agencia internacional de marketing digital">✨ International digital marketing agency</span>
+    <span data-en="🚀 Growing brands worldwide" data-es="🚀 Hacemos crecer marcas">🚀 Growing brands worldwide</span>
+    <span data-en="💎 Premium strategies · Real results" data-es="💎 Estrategias premium · Resultados reales">💎 Premium strategies · Real results</span>
+    <span data-en="🌍 EN · ES · FR · DE · IT" data-es="🌍 EN · ES · FR · DE · IT">🌍 EN · ES · FR · DE · IT</span>
+    <span data-en="✨ International digital marketing agency" data-es="✨ Agencia internacional de marketing digital">✨ International digital marketing agency</span>
+    <span data-en="🚀 Growing brands worldwide" data-es="🚀 Hacemos crecer marcas">🚀 Growing brands worldwide</span>
+    <span data-en="💎 Premium strategies · Real results" data-es="💎 Estrategias premium · Resultados reales">💎 Premium strategies · Real results</span>
+    <span data-en="🌍 EN · ES · FR · DE · IT" data-es="🌍 EN · ES · FR · DE · IT">🌍 EN · ES · FR · DE · IT</span>
+  </div>
+</div>
+
+<nav class="nav" id="nav">
+  <a href="#" class="logo">
+    <div class="logo-img"><img src="https://i.postimg.cc/gkSvmGnd/Gemini-Generated-Image-6ila136ila136ila.png" alt="Verto"></div>
+    <div class="logo-text">Verto</div>
+  </a>
+  <div class="nav-mid">
+    <a href="#benefits" data-en="About" data-es="Nosotros">About</a>
+    <a href="#process" data-en="Process" data-es="Proceso">Process</a>
+    <a href="#testimonials" data-en="Reviews" data-es="Reseñas">Reviews</a>
+    <a href="#pricing" data-en="Pricing" data-es="Tarifas">Pricing</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-switch">
+      <button class="lang-btn active" onclick="setLang('en')" data-lang-btn="en">EN</button>
+      <button class="lang-btn" onclick="setLang('es')" data-lang-btn="es">ES</button>
+    </div>
+    <a href="#contact" class="nav-cta" data-en="Get Started" data-es="Comenzar">Get Started</a>
+    <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobMenu">
+  <a href="#benefits" onclick="toggleMenu()" data-en="About" data-es="Nosotros">About</a>
+  <a href="#process" onclick="toggleMenu()" data-en="Process" data-es="Proceso">Process</a>
+  <a href="#testimonials" onclick="toggleMenu()" data-en="Reviews" data-es="Reseñas">Reviews</a>
+  <a href="#pricing" onclick="toggleMenu()" data-en="Pricing" data-es="Tarifas">Pricing</a>
+  <a href="#contact" onclick="toggleMenu()" data-en="Contact" data-es="Contacto">Contact</a>
+</div>
+
+<!-- HERO WRAP with rings -->
+<div class="hero-wrap">
+  <div class="rings">
+    <div class="ring ring-5"></div>
+    <div class="ring ring-4"></div>
+    <div class="ring ring-3"></div>
+    <div class="ring ring-2"></div>
+    <div class="ring ring-1"></div>
+  </div>
+  <div class="stars" id="stars"></div>
+  
+  <section class="hero">
+    <div class="hero-tag">
+      <span class="dot"></span>
+      <span data-en="Available for new projects" data-es="Disponible para nuevos proyectos">Available for new projects</span>
+    </div>
+    <h1 data-en="Marketing That Delivers Real Results for You" data-es="Marketing Que Entrega Resultados Reales Para Ti">Marketing That Delivers Real Results for You</h1>
+    <p data-en="Verto keeps your brand strategy, campaigns and analytics in one place. Always optimized, multilingual, and up to date so nothing gets missed." data-es="Verto mantiene la estrategia de tu marca, campañas y analíticas en un solo lugar. Siempre optimizado, multilingüe y actualizado.">Verto keeps your brand strategy, campaigns and analytics in one place. Always optimized, multilingual, and up to date so nothing gets missed.</p>
+    <div class="hero-cta">
+      <a href="#benefits" class="btn-text"><span data-en="Explore" data-es="Explorar">Explore</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="#contact" class="btn-primary"><span data-en="Get Started" data-es="Comenzar">Get Started</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+    </div>
+  </section>
+  
+  <!-- DASHBOARD MOCKUP -->
+  <div class="mockup">
+    <div class="mockup-frame">
+      <div class="mockup-top">
+        <div class="mockup-dot r"></div>
+        <div class="mockup-dot y"></div>
+        <div class="mockup-dot g"></div>
+        <div class="mockup-url">verto-media.com/dashboard</div>
+      </div>
+      <div class="mockup-body">
+        <div class="mockup-side">
+          <div class="mockup-side-item active"><div class="ic"></div>Overview</div>
+          <div class="mockup-side-item"><div class="ic"></div>Campaigns</div>
+          <div class="mockup-side-item"><div class="ic"></div>Analytics</div>
+          <div class="mockup-side-item"><div class="ic"></div>Content</div>
+          <div class="mockup-side-item"><div class="ic"></div>Reports</div>
+        </div>
+        <div class="mockup-main">
+          <div class="mockup-stat"><div class="mockup-stat-l">Traffic</div><div class="mockup-stat-v purple">+125%</div></div>
+          <div class="mockup-stat"><div class="mockup-stat-l">Bookings</div><div class="mockup-stat-v">+40%</div></div>
+          <div class="mockup-stat"><div class="mockup-stat-l">Leads</div><div class="mockup-stat-v purple">350</div></div>
+          <div class="mockup-stat"><div class="mockup-stat-l">ROI</div><div class="mockup-stat-v">+487%</div></div>
+          <div class="mockup-list">
+            <div class="mockup-row done"><div class="chk"></div><span>Email campaign sent — 2.4K opens</span><div class="badge">Done</div></div>
+            <div class="mockup-row done"><div class="chk"></div><span>SEO audit completed</span><div class="badge">Done</div></div>
+            <div class="mockup-row"><div class="chk"></div><span>Meta Ads campaign — Launch Friday</span><div class="badge">Active</div></div>
+            <div class="mockup-row"><div class="chk"></div><span>Content calendar — 22 posts ready</span><div class="badge">Active</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TRUSTED -->
+<div class="trusted">
+  <div class="trusted-label" data-en="Trusted by ambitious brands worldwide:" data-es="Marcas ambiciosas que confían en nosotros:">Trusted by ambitious brands worldwide:</div>
+  <div class="trusted-logos">
+    <span class="trusted-logo">BEAUTY</span>
+    <span class="trusted-logo">Wellness</span>
+    <span class="trusted-logo">hotel</span>
+    <span class="trusted-logo">FASHION</span>
+    <span class="trusted-logo">food</span>
+    <span class="trusted-logo">lifestyle</span>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+<section class="dark-section" id="benefits">
+  <div class="sh reveal">
+    <div class="sh-pill"><span class="heart">💚</span> <span data-en="Our Benefits" data-es="Nuestros Beneficios">Our Benefits</span></div>
+    <h2 data-en="Think Less About Strategy. Focus on Growth." data-es="Piensa Menos en Estrategia. Enfócate en Crecer.">Think Less About Strategy. Focus on Growth.</h2>
+    <p data-en="The all-in-one digital marketing partner to keep your brand organized, optimized, and growing." data-es="El socio de marketing digital todo-en-uno para mantener tu marca organizada, optimizada y creciendo.">The all-in-one digital marketing partner to keep your brand organized, optimized, and growing.</p>
+  </div>
+  <div class="benefits-grid">
+    <div class="bcard reveal r-d1">
+      <div class="bcard-tag">⚡ <span data-en="Always-on" data-es="Siempre activo">Always-on</span></div>
+      <h3><span data-en="Cloud" data-es="Datos">Cloud</span> <span class="h" data-en="Analytics" data-es="en la Nube">Analytics</span></h3>
+      <p data-en="Your campaigns are tracked safely in the cloud, always up-to-date and accessible from anywhere in the world." data-es="Tus campañas se rastrean de forma segura en la nube, siempre actualizadas y accesibles desde cualquier lugar.">Your campaigns are tracked safely in the cloud, always up-to-date and accessible from anywhere in the world.</p>
+      <div class="bcard-vis">
+        <div class="cloud-vis">
+          <div class="cloud-pt p1"></div>
+          <div class="cloud-pt p2"></div>
+          <div class="cloud-pt p3"></div>
+          <div class="cloud-pt p4"></div>
+          <div class="cloud-orb">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bcard reveal r-d2">
+      <div class="bcard-tag">🔗 <span data-en="Connect" data-es="Conectar">Connect</span></div>
+      <h3 data-en="App Integrations" data-es="Integraciones">App Integrations</h3>
+      <p data-en="Seamlessly connect your favorite marketing tools — Meta, Google, TikTok, Mailchimp and more — for a smooth unified experience." data-es="Conecta sin problemas tus herramientas favoritas — Meta, Google, TikTok, Mailchimp y más — para una experiencia unificada.">Seamlessly connect your favorite marketing tools — Meta, Google, TikTok, Mailchimp and more — for a smooth unified experience.</p>
+      <div class="bcard-vis">
+        <div class="int-vis">
+          <div class="int-icon">📧</div>
+          <div class="int-icon">📊</div>
+          <div class="int-icon">📱</div>
+          <div class="int-icon">🎯</div>
+          <div class="int-icon">📈</div>
+          <div class="int-icon">💬</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS / TIMELINE -->
+<section class="dark-section" id="process">
+  <div class="sh sh-center reveal">
+    <div class="sh-pill purple">✦ <span data-en="Our Process" data-es="Nuestro Proceso">Our Process</span></div>
+    <h2 data-en="Get Set Up in Minutes, Start Growing Fast" data-es="Comienza en Minutos, Crece Rápido">Get Set Up in Minutes, Start Growing Fast</h2>
+    <p data-en="A proven 3-step framework that transforms ambitious brands into measurable growth stories." data-es="Un marco probado de 3 pasos que transforma marcas ambiciosas en historias de crecimiento medibles.">A proven 3-step framework that transforms ambitious brands into measurable growth stories.</p>
+  </div>
+  <div class="timeline">
+    <svg class="timeline-svg" viewBox="0 0 800 100" preserveAspectRatio="none">
+      <defs><linearGradient id="tlGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#7c5cff" stop-opacity=".8"/><stop offset="100%" stop-color="#7c5cff" stop-opacity=".2"/></linearGradient></defs>
+      <path d="M 100 50 Q 250 10, 400 50 T 700 50" stroke="url(#tlGrad)" stroke-width="2" fill="none" stroke-dasharray="6 4"/>
+    </svg>
+    <div class="tl-steps">
+      <div class="tl-step reveal r-d1">
+        <div class="tl-num">1</div>
+        <h4 data-en="Join & Build Team" data-es="Únete y Construye">Join & Build Team</h4>
+        <p data-en="Quick onboarding call to understand your brand, goals and audience." data-es="Llamada rápida para entender tu marca, objetivos y audiencia.">Quick onboarding call to understand your brand, goals and audience.</p>
+      </div>
+      <div class="tl-step reveal r-d2">
+        <div class="tl-num">2</div>
+        <h4 data-en="Create Strategy" data-es="Crea Estrategia">Create Strategy</h4>
+        <p data-en="Custom roadmap with content plan, ad campaigns and measurable KPIs." data-es="Hoja de ruta personalizada con plan de contenido, campañas y KPIs.">Custom roadmap with content plan, ad campaigns and measurable KPIs.</p>
+      </div>
+      <div class="tl-step reveal r-d3">
+        <div class="tl-num">3</div>
+        <h4 data-en="Track Progress" data-es="Sigue el Progreso">Track Progress</h4>
+        <p data-en="Real-time dashboard with traffic, leads, conversions and ROI." data-es="Panel en tiempo real con tráfico, leads, conversiones y ROI.">Real-time dashboard with traffic, leads, conversions and ROI.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAMS SWITCHED / TESTIMONIALS -->
+<section class="dark-section" id="testimonials">
+  <div class="sh sh-center reveal">
+    <div class="sh-pill purple">✦ <span data-en="Reviews" data-es="Reseñas">Reviews</span></div>
+    <h2><span data-en="Brands That Switched to" data-es="Marcas Que Eligieron">Brands That Switched to</span><br><span class="grad" data-en="Verto Don't Look Back" data-es="Verto No Vuelven Atrás">Verto Don't Look Back</span></h2>
+    <p data-en="Real results from real clients across Beauty, Hospitality, Wellness and E-commerce." data-es="Resultados reales de clientes reales en Belleza, Hospitalidad, Bienestar y E-commerce.">Real results from real clients across Beauty, Hospitality, Wellness and E-commerce.</p>
+  </div>
+  <div class="team-grid">
+    <div class="tcard reveal r-d1">
+      <div class="tcard-avatar">J</div>
+      <div class="tcard-name">James M.</div>
+      <div class="tcard-role" data-en="Product Manager" data-es="Director de Producto">Product Manager</div>
+      <div class="tcard-stars">★★★★★</div>
+      <p class="tcard-quote" data-en="Verto transformed our brand presence. Traffic doubled in 3 months and bookings are at all-time highs." data-es="Verto transformó nuestra presencia. El tráfico se duplicó en 3 meses y las reservas están en máximos históricos.">Verto transformed our brand presence. Traffic doubled in 3 months and bookings are at all-time highs.</p>
+    </div>
+    <div class="tcard reveal r-d2">
+      <div class="tcard-avatar">S</div>
+      <div class="tcard-name">Sara L.</div>
+      <div class="tcard-role" data-en="UX Designer" data-es="Diseñadora UX">UX Designer</div>
+      <div class="tcard-stars">★★★★★</div>
+      <p class="tcard-quote" data-en="Multilingual content delivered fast. They get our audience across EN, ES and FR. Best decision we made." data-es="Contenido multilingüe entregado rápido. Entienden nuestra audiencia en EN, ES y FR. La mejor decisión.">Multilingual content delivered fast. They get our audience across EN, ES and FR. Best decision we made.</p>
+    </div>
+    <div class="tcard reveal r-d3">
+      <div class="tcard-avatar">D</div>
+      <div class="tcard-name">Daniel R.</div>
+      <div class="tcard-role" data-en="Marketing Director" data-es="Director de Marketing">Marketing Director</div>
+      <div class="tcard-stars">★★★★★</div>
+      <p class="tcard-quote" data-en="Premium quality, real ROI. Their Meta Ads campaigns generated 350+ qualified leads in the first quarter." data-es="Calidad premium, ROI real. Sus campañas de Meta Ads generaron más de 350 leads cualificados.">Premium quality, real ROI. Their Meta Ads campaigns generated 350+ qualified leads in the first quarter.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="dark-section" id="pricing">
+  <div class="sh sh-center reveal">
+    <div class="sh-pill purple">✦ <span data-en="Pricing" data-es="Tarifas">Pricing</span></div>
+    <h2><span data-en="Plans Made for" data-es="Planes para Marcas de">Plans Made for</span><br><span class="grad" data-en="Brands of All Sizes" data-es="Todos los Tamaños">Brands of All Sizes</span></h2>
+    <p data-en="From startups to established brands, choose the pack that fits your growth ambitions." data-es="Desde startups hasta marcas establecidas, elige el paquete adecuado.">From startups to established brands, choose the pack that fits your growth ambitions.</p>
+  </div>
+  <div class="price-grid">
+    <div class="pcard reveal r-d1">
+      <div class="pcard-name" data-en="Starter" data-es="Inicio">Starter</div>
+      <div class="pcard-price">750€<small data-en="/month" data-es="/mes">/month</small></div>
+      <p class="pcard-desc" data-en="Online visibility & presence for emerging brands." data-es="Visibilidad y presencia online para marcas emergentes.">Online visibility & presence for emerging brands.</p>
+      <a href="#" onclick="openModal('Starter Pack — 750€/month');return false;" class="pcard-btn" data-en="Get Started" data-es="Comenzar">Get Started</a>
+      <ul class="pcard-features">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span data-en="Digital presence audit" data-es="Auditoría digital">Digital presence audit</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span data-en="Moodboard + recommendations" data-es="Moodboard + recomendaciones">Moodboard + recommendations</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span data-en="8 publications/month" data-es="8 publicaciones/mes">8 publications/month</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span data-en="Publication scheduling" data-es="Planificación">Publication scheduling</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span data-en="Monthly report" data-es="Informe mensual">Monthly report</span></li>
+      </ul>
+    </div>
+    
+    <div class="pcard featured reveal r-d2">
+      <div class="pcard-pop" data-en="Popular" data-es="Popular">Popular</div>
+      <div class="pcard-name" data-en="Launch" data-es="Lanzamiento">Launch</div>
+      <div class="pcard-price">2,500€<small data-en="/project" data-es="/proyecto">/project</small></div>
+      <p class="pcard-desc" data-en="Launch & Conversion — 5-6 weeks delivery." data-es="Lanzamiento y Conversión — Entrega 5-6 semanas.">Launch & Conversion — 5-6 weeks delivery.</p>
+      <a href="#" onclick="openModal('Launch Pack — 2,500€/project');return false;" class="pcard-btn" data-en="Get Started" data-es="Comenzar">Get Started</a>
+      <ul class="pcard-features">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span data-en="Content strategy + editorial calendar" data-es="Estrategia + calendario editorial">Content strategy + editorial calendar</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span data-en="22 publications/month" data-es="22 publicaciones/mes">22 publications/month</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span data-en="Community management" data-es="Gestión de comunidad">Community management</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span data-en="2 newsletters/month" data-es="2 newsletters/mes">2 newsletters/month</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span data-en="1 ad campaign managed" data-es="1 campaña gestionada">1 ad campaign managed</span></li>
+      </ul>
+    </div>
+    
+    <div class="pcard reveal r-d3">
+      <div class="pcard-name" data-en="Premium" data-es="Premium">Premium</div>
+      <div class="pcard-price">5,000€<small data-en="/project" data-es="/proyecto">/project</small></div>
+      <p class="pcard-desc" data-en="Custom 360° campaign — Premium full-service." data-es="Campaña 360° personalizada — Servicio premium completo.">Custom 360° campaign — Premium full-service.</p>
+      <a href="#" onclick="openModal('Premium Pack — 5,000€/project');return false;" class="pcard-btn" data-en="Get Started" data-es="Comenzar">Get Started</a>
+      <ul class="pcard-features">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span data-en="Custom 360° digital campaign" data-es="Campaña 360° personalizada">Custom 360° digital campaign</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span data-en="Artistic direction + moodboard" data-es="Dirección artística + moodboard">Artistic direction + moodboard</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span data-en="15 visuals + 3 ad formats" data-es="15 visuales + 3 formatos">15 visuals + 3 ad formats</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span data-en="2 newsletters + landing page" data-es="2 newsletters + landing page">2 newsletters + landing page</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span data-en="Premium support & priority" data-es="Soporte premium">Premium support & priority</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="dark-section">
+  <div class="sh sh-center reveal">
+    <div class="sh-pill purple">✦ FAQ</div>
+    <h2><span data-en="Everything You Need to" data-es="Todo Lo Que Necesitas">Everything You Need to</span><br><span class="grad" data-en="Know Before Getting Started" data-es="Saber Para Empezar">Know Before Getting Started</span></h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item reveal r-d1">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span data-en="How long does it take to onboard with Verto?" data-es="¿Cuánto tarda el onboarding con Verto?">How long does it take to onboard with Verto?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a"><p data-en="Onboarding takes 24-48 hours. We schedule a discovery call, audit your brand and deliver a strategic plan within the first week." data-es="El onboarding toma 24-48 horas. Programamos una llamada, auditamos tu marca y entregamos un plan en la primera semana.">Onboarding takes 24-48 hours. We schedule a discovery call, audit your brand and deliver a strategic plan within the first week.</p></div>
+    </div>
+    <div class="faq-item reveal r-d1">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span data-en="Do you really offer free consultations?" data-es="¿Ofrecen consultas gratuitas?">Do you really offer free consultations?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a"><p data-en="Yes! Every new client gets a free 30-minute strategy call to discuss goals and how we can help." data-es="¡Sí! Cada nuevo cliente recibe una llamada estratégica gratuita de 30 minutos.">Yes! Every new client gets a free 30-minute strategy call to discuss goals and how we can help.</p></div>
+    </div>
+    <div class="faq-item reveal r-d2">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span data-en="Is my brand data secure with Verto?" data-es="¿Mi información está segura con Verto?">Is my brand data secure with Verto?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a"><p data-en="Absolutely. We follow strict NDA agreements and use secure cloud infrastructure to protect all client data." data-es="Absolutamente. Seguimos acuerdos NDA estrictos y usamos infraestructura segura en la nube.">Absolutely. We follow strict NDA agreements and use secure cloud infrastructure to protect all client data.</p></div>
+    </div>
+    <div class="faq-item reveal r-d2">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span data-en="Can I integrate Verto with my existing tools?" data-es="¿Puedo integrar Verto con mis herramientas?">Can I integrate Verto with my existing tools?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a"><p data-en="Yes — we work with Meta Business, Google Ads, Mailchimp, HubSpot and most CRMs and analytics platforms." data-es="Sí — trabajamos con Meta Business, Google Ads, Mailchimp, HubSpot y la mayoría de CRMs.">Yes — we work with Meta Business, Google Ads, Mailchimp, HubSpot and most CRMs and analytics platforms.</p></div>
+    </div>
+    <div class="faq-item reveal r-d3">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span data-en="Can I cancel or change my plan at any time?" data-es="¿Puedo cancelar o cambiar mi plan cuando quiera?">Can I cancel or change my plan at any time?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a"><p data-en="Yes. Monthly plans can be cancelled or upgraded anytime with 7 days notice. No long-term commitments." data-es="Sí. Los planes mensuales pueden cancelarse o actualizarse con 7 días de aviso. Sin compromisos a largo plazo.">Yes. Monthly plans can be cancelled or upgraded anytime with 7 days notice. No long-term commitments.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="contact">
+  <div class="final-rings">
+    <div class="final-ring f3"></div>
+    <div class="final-ring f2"></div>
+    <div class="final-ring f1"></div>
+  </div>
+  <div class="reveal">
+    <h2><span data-en="Ready to Grow Your" data-es="¿Listo Para Hacer Crecer Tu">Ready to Grow Your</span><br><span data-en="Brand?" data-es="Marca?">Brand?</span></h2>
+    <p data-en="Work smarter. All-in-one place." data-es="Trabaja inteligente. Todo en un solo lugar.">Work smarter. All-in-one place.</p>
+    <a href="#" onclick="openModal('General Inquiry');return false;" class="btn-primary"><span data-en="Get Started for Free" data-es="Comenzar Gratis">Get Started for Free</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="foot-logo">
+          <div class="foot-logo-img"><img src="https://i.postimg.cc/gkSvmGnd/Gemini-Generated-Image-6ila136ila136ila.png" alt="Verto"></div>
+          <div class="foot-logo-text">Verto</div>
+        </div>
+        <p class="foot-tag" data-en="International digital marketing agency. Comprender. Crear. Convertir." data-es="Agencia internacional de marketing digital. Comprender. Crear. Convertir.">International digital marketing agency. Comprender. Crear. Convertir.</p>
+        <div class="foot-langs">
+          <span class="foot-lang">English</span><span class="foot-lang">Español</span><span class="foot-lang">Français</span><span class="foot-lang">Deutsch</span><span class="foot-lang">Italiano</span>
+        </div>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h4 data-en="Navigation" data-es="Navegación">Navigation</h4>
+          <a href="#benefits" data-en="About" data-es="Nosotros">About</a>
+          <a href="#process" data-en="Process" data-es="Proceso">Process</a>
+          <a href="#testimonials" data-en="Reviews" data-es="Reseñas">Reviews</a>
+          <a href="#pricing" data-en="Pricing" data-es="Tarifas">Pricing</a>
+        </div>
+        <div class="foot-col">
+          <h4 data-en="Services" data-es="Servicios">Services</h4>
+          <a href="#">Email Marketing</a>
+          <a href="#">SEO</a>
+          <a href="#" data-en="Paid Ads" data-es="Publicidad">Paid Ads</a>
+          <a href="#">Branding</a>
+        </div>
+        <div class="foot-col">
+          <h4 data-en="Resources" data-es="Recursos">Resources</h4>
+          <a href="#" data-en="Privacy Policy" data-es="Privacidad">Privacy Policy</a>
+          <a href="#" data-en="Terms" data-es="Términos">Terms</a>
+          <a href="#" data-en="FAQ" data-es="FAQ">FAQ</a>
+          <a href="#" data-en="Blog" data-es="Blog">Blog</a>
+        </div>
+        <div class="foot-col">
+          <h4 data-en="Contact" data-es="Contacto">Contact</h4>
+          <a href="https://wa.me/212617499697" target="_blank">WhatsApp</a>
+          <a href="mailto:vertomediaglobal@gmail.com">Email</a>
+          <a href="tel:+212617499697">+212 617 499 697</a>
+          <a href="#" data-en="Casablanca, Morocco" data-es="Casablanca, Marruecos">Casablanca, Morocco</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-soc">
+        <a href="https://wa.me/212617499697" class="fsc" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12 21.5c-1.94 0-3.74-.59-5.22-1.6L3 21l1.1-3.7C2.99 15.7 2.5 13.91 2.5 12 2.5 6.75 6.75 2.5 12 2.5S21.5 6.75 21.5 12 17.25 21.5 12 21.5z"/></svg></a>
+        <a href="mailto:vertomediaglobal@gmail.com" class="fsc" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+        <a href="https://web.facebook.com/profile.php?id=100083970673105" class="fsc" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="https://www.instagram.com/agen.cydigitalmarketingena" class="fsc" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="https://www.linkedin.com/in/verto-media-global-aa79b4391/" class="fsc" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://www.youtube.com/@ENA-g7s" class="fsc" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      </div>
+      <div class="foot-copy">© 2026 Verto Media Global · <span data-en="All Rights Reserved" data-es="Todos los Derechos">All Rights Reserved</span></div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/212617499697?text=Hello%20Verto%20Media!" target="_blank" class="wa" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12 21.5c-1.94 0-3.74-.59-5.22-1.6L3 21l1.1-3.7C2.99 15.7 2.5 13.91 2.5 12 2.5 6.75 6.75 2.5 12 2.5S21.5 6.75 21.5 12 17.25 21.5 12 21.5z"/></svg></a>
+
+<div class="modal" id="serviceModal">
+  <div class="modal-content">
+    <div class="modal-handle"></div>
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalMain">
+      <div class="modal-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
+      <h3 id="modalTitle" data-en="How would you like to proceed?" data-es="¿Cómo te gustaría proceder?">How would you like to proceed?</h3>
+      <p data-en="Choose your preferred way to request this service. We respond within 24 hours." data-es="Elige tu manera preferida. Respondemos en 24 horas.">Choose your preferred way to request this service. We respond within 24 hours.</p>
+      <div class="mod-options">
+        <a href="#" class="mod-opt wa-opt" id="waLink" target="_blank">
+          <div class="mod-opt-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12 21.5c-1.94 0-3.74-.59-5.22-1.6L3 21l1.1-3.7C2.99 15.7 2.5 13.91 2.5 12 2.5 6.75 6.75 2.5 12 2.5S21.5 6.75 21.5 12 17.25 21.5 12 21.5z"/></svg></div>
+          <div class="mod-opt-info"><div class="mod-opt-title" data-en="Chat on WhatsApp" data-es="Chat por WhatsApp">Chat on WhatsApp</div><div class="mod-opt-desc" data-en="Instant response · Direct conversation" data-es="Respuesta instantánea">Instant response · Direct conversation</div></div>
+        </a>
+        <a href="#" class="mod-opt" onclick="showEmailForm();return false;">
+          <div class="mod-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div class="mod-opt-info"><div class="mod-opt-title" data-en="Send Email Request" data-es="Enviar por Email">Send Email Request</div><div class="mod-opt-desc" data-en="Fill form · Get detailed response" data-es="Formulario · Respuesta detallada">Fill form · Get detailed response</div></div>
+        </a>
+      </div>
+    </div>
+    <form class="email-form" id="emailForm" action="https://formsubmit.co/issammalyh2@gmail.com" method="POST">
+      <input type="hidden" name="_subject" id="emailSubject" value="Verto Media — Service Request">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="Name" placeholder="Your Name" required>
+      <input type="email" name="Email" placeholder="Your Email" required>
+      <input type="text" name="Service" id="emailService" placeholder="Service Requested" required>
+      <textarea name="Message" placeholder="Tell us about your project..." required></textarea>
+      <button type="submit"><span data-en="Send Request" data-es="Enviar">Send Request</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+    </form>
+    <div class="form-success" id="formSuccess">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      <h4 data-en="Request Sent!" data-es="¡Enviado!">Request Sent!</h4>
+      <p data-en="Thank you. We'll respond within 24 hours." data-es="Gracias. Responderemos en 24 horas.">Thank you. We'll respond within 24 hours.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function setLang(lang){
+  document.documentElement.setAttribute('data-lang',lang);
+  document.querySelectorAll('[data-lang-btn]').forEach(b=>b.classList.toggle('active',b.dataset.langBtn===lang));
+  document.querySelectorAll('[data-en]').forEach(el=>{var t=el.getAttribute('data-'+lang);if(t!==null)el.textContent=t});
+  localStorage.setItem('verto-lang',lang);
+}
+var savedLang=localStorage.getItem('verto-lang');if(savedLang)setLang(savedLang);
+
+(function(){var c=document.getElementById('stars');if(!c)return;for(var i=0;i<40;i++){var s=document.createElement('div');s.className='star';var sz=Math.random()*2+1;s.style.width=sz+'px';s.style.height=sz+'px';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*3+'s';c.appendChild(s)}})();
+
+function toggleMenu(){document.getElementById('burger').classList.toggle('open');document.getElementById('mobMenu').classList.toggle('open')}
+function toggleFaq(el){el.parentElement.classList.toggle('open')}
+
+window.addEventListener('scroll',function(){var nav=document.getElementById('nav');if(window.scrollY>30)nav.classList.add('scrolled');else nav.classList.remove('scrolled')});
+
+var revealObs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.15,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>revealObs.observe(el));
+
+document.querySelectorAll('a[href^="#"]').forEach(function(l){l.addEventListener('click',function(e){var h=this.getAttribute('href');if(h==='#')return;var t=document.querySelector(h);if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}})});
+
+function openModal(service){
+  var lang=document.documentElement.getAttribute('data-lang')||'en';
+  document.getElementById('serviceModal').classList.add('open');
+  document.body.style.overflow='hidden';
+  document.getElementById('modalMain').style.display='block';
+  document.getElementById('emailForm').classList.remove('show');
+  document.getElementById('formSuccess').classList.remove('show');
+  var title=document.getElementById('modalTitle');
+  title.textContent=lang==='es'?('Solicitar: '+service):('Request: '+service);
+  var waMsg=lang==='es'?'Hola Verto Media! Me interesa: '+service:'Hello Verto Media! I am interested in: '+service;
+  document.getElementById('waLink').href='https://wa.me/212617499697?text='+encodeURIComponent(waMsg);
+  document.getElementById('emailSubject').value='Verto Media — '+service;
+  document.getElementById('emailService').value=service;
+}
+function closeModal(){document.getElementById('serviceModal').classList.remove('open');document.body.style.overflow=''}
+function showEmailForm(){document.getElementById('modalMain').style.display='none';document.getElementById('emailForm').classList.add('show')}
+document.getElementById('serviceModal').addEventListener('click',function(e){if(e.target===this)closeModal()});
+document.getElementById('emailForm').addEventListener('submit',function(e){
+  e.preventDefault();var form=this;var data=new FormData(form);
+  fetch(form.action,{method:'POST',body:data,headers:{'Accept':'application/json'}})
+    .then(()=>{form.classList.remove('show');document.getElementById('formSuccess').classList.add('show');form.reset()})
+    .catch(()=>{form.classList.remove('show');document.getElementById('formSuccess').classList.add('show');form.reset()});
+});
+</script>
+</body>
+</html>
