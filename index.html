@@ -1475,7 +1475,238 @@ footer{background:#000;border-top:1px solid var(--border);padding:50px 18px 24px
     </div>
   </div>
 </section>
+<!-- GROWTH ENGINE -->
+<section style="position:relative;padding:110px 18px;overflow:hidden;background:#000" id="growth-engine">
 
+  <canvas id="ge-cv" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none"></canvas>
+  <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(124,92,255,.5),transparent)"></div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:900px;height:500px;background:radial-gradient(ellipse,rgba(124,92,255,.08),transparent 65%);filter:blur(80px);pointer-events:none"></div>
+
+  <div style="max-width:1100px;margin:0 auto;position:relative;z-index:1">
+
+    <!-- Header -->
+    <div style="text-align:center;margin-bottom:64px" class="reveal">
+      <div style="display:inline-flex;align-items:center;gap:8px;padding:5px 14px;background:rgba(124,92,255,.1);border:1px solid rgba(124,92,255,.3);border-radius:100px;font-size:10px;font-weight:700;color:#b8a5ff;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px">
+        <div style="width:6px;height:6px;border-radius:50%;background:#7c5cff;animation:pulse 1.5s infinite"></div>
+        <span data-en="The Growth Engine" data-es="El Motor de Crecimiento">The Growth Engine</span>
+      </div>
+      <h2 style="font-size:clamp(32px,5vw,60px);font-weight:800;letter-spacing:-2.5px;line-height:1;color:#fff;margin-bottom:16px">
+        <span data-en="How we turn brands into" data-es="Cómo convertimos marcas en">How we turn brands into</span><br>
+        <span style="background:linear-gradient(135deg,#b8a5ff,#7c5cff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent" data-en="market leaders." data-es="líderes del mercado.">market leaders.</span>
+      </h2>
+      <p style="font-size:15px;color:#a8a3c4;max-width:440px;margin:0 auto;line-height:1.65" data-en="A proven 4-phase system that takes your brand from invisible to unstoppable." data-es="Un sistema probado de 4 fases que lleva tu marca de invisible a imparable.">A proven 4-phase system that takes your brand from invisible to unstoppable.</p>
+    </div>
+
+    <!-- 4 Phase cards — horizontal scroll on mobile -->
+    <div class="ge-phases">
+
+      <div class="ge-phase reveal r-d1" style="--pc:#7c5cff;--pg:rgba(124,92,255,.15)">
+        <div class="ge-phase-line"></div>
+        <div class="ge-phase-num">01</div>
+        <div class="ge-phase-ico-wrap">
+          <canvas class="ge-phase-cv" width="120" height="120"></canvas>
+          <div class="ge-phase-ico">🎯</div>
+        </div>
+        <div class="ge-phase-title" data-en="Diagnose" data-es="Diagnosticar">Diagnose</div>
+        <div class="ge-phase-desc" data-en="Deep brand audit, competitor analysis and audience mapping to find your biggest growth opportunities." data-es="Auditoría de marca, análisis de competidores y mapeo de audiencia.">Deep brand audit, competitor analysis and audience mapping to find your biggest growth opportunities.</div>
+        <div class="ge-phase-stat"><span class="ge-stat-num" data-gs="48" data-suffix="h">0h</span><span class="ge-stat-lbl" data-en="Audit Delivery" data-es="Entrega Auditoría">Audit Delivery</span></div>
+      </div>
+
+      <div class="ge-connector reveal r-d2">
+        <div class="ge-conn-line"></div>
+        <div class="ge-conn-dot"></div>
+      </div>
+
+      <div class="ge-phase reveal r-d2" style="--pc:#10b981;--pg:rgba(16,185,129,.12)">
+        <div class="ge-phase-line" style="background:var(--pc)"></div>
+        <div class="ge-phase-num" style="color:#6ee7b7">02</div>
+        <div class="ge-phase-ico-wrap">
+          <canvas class="ge-phase-cv" width="120" height="120"></canvas>
+          <div class="ge-phase-ico">⚡</div>
+        </div>
+        <div class="ge-phase-title" data-en="Build" data-es="Construir">Build</div>
+        <div class="ge-phase-desc" data-en="Custom strategy, content production, ad creatives and campaign architecture — all built for your market." data-es="Estrategia personalizada, producción de contenido y arquitectura de campaña para tu mercado.">Custom strategy, content production, ad creatives and campaign architecture — all built for your market.</div>
+        <div class="ge-phase-stat"><span class="ge-stat-num" style="color:#6ee7b7" data-gs="7" data-suffix=" Days">0</span><span class="ge-stat-lbl" data-en="To Launch" data-es="Al Lanzamiento">To Launch</span></div>
+      </div>
+
+      <div class="ge-connector reveal r-d3">
+        <div class="ge-conn-line" style="background:linear-gradient(90deg,#10b981,#f59e0b)"></div>
+        <div class="ge-conn-dot" style="background:#f59e0b;box-shadow:0 0 10px #f59e0b"></div>
+      </div>
+
+      <div class="ge-phase reveal r-d3" style="--pc:#f59e0b;--pg:rgba(245,158,11,.12)">
+        <div class="ge-phase-line" style="background:#f59e0b"></div>
+        <div class="ge-phase-num" style="color:#fcd34d">03</div>
+        <div class="ge-phase-ico-wrap">
+          <canvas class="ge-phase-cv" width="120" height="120"></canvas>
+          <div class="ge-phase-ico">🚀</div>
+        </div>
+        <div class="ge-phase-title" data-en="Launch" data-es="Lanzar">Launch</div>
+        <div class="ge-phase-desc" data-en="Multi-channel activation — Meta, Google, TikTok, email, SEO — all firing simultaneously with live tracking." data-es="Activación multicanal — Meta, Google, TikTok, email, SEO — todo activo simultáneamente.">Multi-channel activation — Meta, Google, TikTok, email, SEO — all firing simultaneously with live tracking.</div>
+        <div class="ge-phase-stat"><span class="ge-stat-num" style="color:#fcd34d" data-gs="6" data-suffix=" Chan">0</span><span class="ge-stat-lbl" data-en="Channels Live" data-es="Canales Activos">Channels Live</span></div>
+      </div>
+
+      <div class="ge-connector reveal r-d4">
+        <div class="ge-conn-line" style="background:linear-gradient(90deg,#f59e0b,#ec4899)"></div>
+        <div class="ge-conn-dot" style="background:#ec4899;box-shadow:0 0 10px #ec4899"></div>
+      </div>
+
+      <div class="ge-phase reveal r-d4" style="--pc:#ec4899;--pg:rgba(236,72,153,.12)">
+        <div class="ge-phase-line" style="background:#ec4899"></div>
+        <div class="ge-phase-num" style="color:#f9a8d4">04</div>
+        <div class="ge-phase-ico-wrap">
+          <canvas class="ge-phase-cv" width="120" height="120"></canvas>
+          <div class="ge-phase-ico">📈</div>
+        </div>
+        <div class="ge-phase-title" data-en="Scale" data-es="Escalar">Scale</div>
+        <div class="ge-phase-desc" data-en="Continuous A/B testing, budget optimization and monthly performance reports — always pushing for more." data-es="A/B testing continuo, optimización y informes mensuales — siempre empujando hacia más.">Continuous A/B testing, budget optimization and monthly performance reports — always pushing for more.</div>
+        <div class="ge-phase-stat"><span class="ge-stat-num" style="color:#f9a8d4" data-gs="487" data-prefix="+" data-suffix="%">0%</span><span class="ge-stat-lbl">Avg ROI</span></div>
+      </div>
+
+    </div>
+
+    <!-- Bottom live strip -->
+    <div class="reveal" style="margin-top:52px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+
+      <div class="ge-strip-card" style="--sc:#7c5cff">
+        <div class="ge-strip-ico">🌍</div>
+        <div>
+          <div class="ge-strip-num" data-gs="32" data-suffix="+">0+</div>
+          <div class="ge-strip-lbl" data-en="Countries · Active Campaigns" data-es="Países · Campañas Activas">Countries · Active Campaigns</div>
+        </div>
+      </div>
+
+      <div class="ge-strip-card" style="--sc:#10b981">
+        <div class="ge-strip-ico">⭐</div>
+        <div>
+          <div class="ge-strip-num" style="color:#6ee7b7">4.9/5</div>
+          <div class="ge-strip-lbl" data-en="Client Satisfaction Rate" data-es="Satisfacción del Cliente">Client Satisfaction Rate</div>
+        </div>
+      </div>
+
+      <div class="ge-strip-card" style="--sc:#f59e0b">
+        <div class="ge-strip-ico">💬</div>
+        <div>
+          <div class="ge-strip-num" style="color:#fcd34d">24h</div>
+          <div class="ge-strip-lbl" data-en="Max Response · Always On" data-es="Respuesta Máxima · Siempre">Max Response · Always On</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <style>
+  .ge-phases{display:grid;grid-template-columns:1fr 40px 1fr 40px 1fr 40px 1fr;gap:0;align-items:start}
+  .ge-phase{background:linear-gradient(160deg,#15101f,#0d0a18);border:1px solid rgba(124,92,255,.12);border-radius:20px;padding:28px 22px;position:relative;overflow:hidden;transition:all .4s cubic-bezier(.34,1.56,.64,1);cursor:default}
+  .ge-phase:hover{border-color:var(--pc);transform:translateY(-8px);box-shadow:0 20px 50px rgba(124,92,255,.12)}
+  .ge-phase-line{position:absolute;top:0;left:0;right:0;height:2px;background:var(--pc,#7c5cff);transform:scaleX(0);transform-origin:left;transition:.5s}
+  .ge-phase:hover .ge-phase-line{transform:scaleX(1)}
+  .ge-phase-num{font-size:10px;font-weight:800;color:#b8a5ff;letter-spacing:3px;margin-bottom:14px;opacity:.5}
+  .ge-phase-ico-wrap{position:relative;width:80px;height:80px;margin-bottom:16px}
+  .ge-phase-cv{position:absolute;inset:0;width:100%;height:100%;border-radius:50%}
+  .ge-phase-ico{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:28px;filter:drop-shadow(0 0 12px var(--pc,rgba(124,92,255,.6)));z-index:1;transition:.3s}
+  .ge-phase:hover .ge-phase-ico{transform:translate(-50%,-50%) scale(1.2) rotate(-5deg)}
+  .ge-phase-title{font-size:18px;font-weight:800;color:#fff;letter-spacing:-.5px;margin-bottom:10px}
+  .ge-phase-desc{font-size:12px;color:#a8a3c4;line-height:1.65;margin-bottom:18px}
+  .ge-phase-stat{display:flex;align-items:baseline;gap:6px;padding-top:14px;border-top:1px solid rgba(255,255,255,.05)}
+  .ge-stat-num{font-size:24px;font-weight:800;color:#b8a5ff;letter-spacing:-1px;line-height:1}
+  .ge-stat-lbl{font-size:10px;color:#6b6688;text-transform:uppercase;letter-spacing:1px;font-weight:600}
+  /* Connector */
+  .ge-connector{display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:80px;gap:4px}
+  .ge-conn-line{width:1px;height:40px;background:linear-gradient(180deg,#7c5cff,transparent)}
+  .ge-conn-dot{width:8px;height:8px;border-radius:50%;background:#7c5cff;box-shadow:0 0 10px #7c5cff;animation:pulse 1.5s infinite;flex-shrink:0}
+  /* Strip cards */
+  .ge-strip-card{background:linear-gradient(160deg,#15101f,#0d0a18);border:1px solid rgba(124,92,255,.12);border-radius:16px;padding:22px;display:flex;align-items:center;gap:16px;transition:.3s}
+  .ge-strip-card:hover{border-color:var(--sc);transform:translateY(-4px);box-shadow:0 12px 30px rgba(124,92,255,.1)}
+  .ge-strip-ico{font-size:28px;filter:drop-shadow(0 4px 10px rgba(124,92,255,.4));flex-shrink:0}
+  .ge-strip-num{font-size:26px;font-weight:800;color:#b8a5ff;letter-spacing:-1px;line-height:1;margin-bottom:4px}
+  .ge-strip-lbl{font-size:10px;color:#6b6688;text-transform:uppercase;letter-spacing:1px;font-weight:600}
+  @media(max-width:768px){
+    .ge-phases{grid-template-columns:1fr !important}
+    .ge-connector{display:none}
+    [style*="grid-template-columns:repeat(3,1fr)"][style*="margin-top:52px"]{grid-template-columns:1fr !important}
+  }
+  </style>
+
+  <script>
+  (function(){
+    // Main canvas background
+    var cv=document.getElementById('ge-cv');
+    if(cv){
+      var cx=cv.getContext('2d');
+      var W,H,t=0;
+      function rz(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight}
+      rz();window.addEventListener('resize',rz);
+      var pts=[];
+      for(var i=0;i<60;i++){pts.push({x:Math.random()*100,y:Math.random()*100,vx:(Math.random()-.5)*.08,vy:(Math.random()-.5)*.08,r:Math.random()*1.5+.4,c:['124,92,255','16,185,129','245,158,11','236,72,153'][Math.floor(Math.random()*4)],o:Math.random()*.2+.05,p:Math.random()*Math.PI*2,pv:.01+Math.random()*.015});}
+      function frame(){
+        cx.clearRect(0,0,W,H);t+=.005;
+        pts.forEach(function(p){p.x+=p.vx;p.y+=p.vy;p.p+=p.pv;if(p.x<0||p.x>100)p.vx*=-1;if(p.y<0||p.y>100)p.vy*=-1;var s=1+Math.sin(p.p)*.3;cx.beginPath();cx.arc(p.x*W/100,p.y*H/100,p.r*s,0,Math.PI*2);cx.fillStyle='rgba('+p.c+','+p.o+')';cx.fill();});
+        pts.forEach(function(a,i){pts.slice(i+1,i+5).forEach(function(b){var d=Math.hypot(a.x-b.x,a.y-b.y);if(d<10){cx.beginPath();cx.moveTo(a.x*W/100,a.y*H/100);cx.lineTo(b.x*W/100,b.y*H/100);cx.strokeStyle='rgba(124,92,255,'+(.04*(1-d/10))+')';cx.lineWidth=.5;cx.stroke();}});});
+        requestAnimationFrame(frame);
+      }
+      frame();
+    }
+
+    // Phase mini canvas — rotating ring animation
+    document.querySelectorAll('.ge-phase-cv').forEach(function(c,i){
+      var colors=['#7c5cff','#10b981','#f59e0b','#ec4899'];
+      var col=colors[i%4];
+      var cx2=c.getContext('2d');
+      var t2=0;
+      function f(){
+        var W2=c.width,H2=c.height;
+        cx2.clearRect(0,0,W2,H2);
+        var cx2x=W2/2,cy2=H2/2,r=W2*.4;
+        // Rotating dashed ring
+        cx2.save();cx2.translate(cx2x,cy2);cx2.rotate(t2);
+        cx2.beginPath();cx2.arc(0,0,r,0,Math.PI*2);
+        var rr=parseInt(col.slice(1,3),16)||124;
+        var gg=parseInt(col.slice(3,5),16)||92;
+        var bb=parseInt(col.slice(5,7),16)||255;
+        cx2.strokeStyle='rgba('+rr+','+gg+','+bb+',.3)';
+        cx2.lineWidth=1.5;cx2.setLineDash([5,8]);cx2.stroke();cx2.setLineDash([]);cx2.restore();
+        // Glow center
+        var g=cx2.createRadialGradient(cx2x,cy2,0,cx2x,cy2,r*.6);
+        g.addColorStop(0,'rgba('+rr+','+gg+','+bb+',.15)');g.addColorStop(1,'transparent');
+        cx2.fillStyle=g;cx2.beginPath();cx2.arc(cx2x,cy2,r*.6,0,Math.PI*2);cx2.fill();
+        // Orbiting dot
+        var ox=cx2x+Math.cos(t2*2)*r;var oy=cy2+Math.sin(t2*2)*r;
+        cx2.beginPath();cx2.arc(ox,oy,3,0,Math.PI*2);
+        cx2.fillStyle='rgba('+rr+','+gg+','+bb+',.8)';cx2.fill();
+        t2+=.03;requestAnimationFrame(f);
+      }
+      f();
+    });
+
+    // Scroll — counters
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting)return;
+        e.target.querySelectorAll('[data-gs]').forEach(function(el){
+          var t3=+el.getAttribute('data-gs');
+          var pre=el.getAttribute('data-prefix')||'';
+          var suf=el.getAttribute('data-suffix')||'';
+          var dur=1800,s=performance.now();
+          (function r(n){var p=Math.min((n-s)/dur,1);var v=1-Math.pow(1-p,3);
+          el.textContent=pre+Math.round(v*t3)+suf;if(p<1)requestAnimationFrame(r);})(performance.now());
+        });
+        obs.unobserve(e.target);
+      });
+    },{threshold:.2});
+    var sec=document.getElementById('growth-engine');
+    if(sec)obs.observe(sec);
+
+    // 3D tilt
+    if(window.innerWidth>768){
+      document.querySelectorAll('.ge-phase').forEach(function(card){
+        card.addEventListener('mousemove',function(e){var r=card.getBoundingClientRect();var x=(e.clientX-r.left)/r.width-.5;var y=(e.clientY-r.top)/r.height-.5;card.style.transform='translateY(-8px) perspective(600px) rotateY('+(x*10)+'deg) rotateX('+(-y*7)+'deg)';});
+        card.addEventListener('mouseleave',function(){card.style.transform=''});
+      });
+    }
+  })();
+  </script>
+</section>
 <!-- FINAL CTA -->
 <section class="final-cta" id="contact">
   <div class="final-rings">
