@@ -469,7 +469,304 @@ footer{background:#000;border-top:1px solid var(--border);padding:50px 18px 24px
     </div>
   </div>
 </div>
+<!-- RESULTS ORBIT -->
+<section style="position:relative;padding:100px 18px;overflow:hidden;background:#000" id="orbit-section">
 
+  <!-- BG glow -->
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(124,92,255,.12),transparent 65%);filter:blur(60px);pointer-events:none"></div>
+
+  <!-- Top/bottom border -->
+  <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(124,92,255,.4),transparent)"></div>
+  <div style="position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(124,92,255,.2),transparent)"></div>
+
+  <div style="max-width:1100px;margin:0 auto;position:relative;z-index:1">
+
+    <!-- Header -->
+    <div style="text-align:center;margin-bottom:60px" class="reveal">
+      <div style="display:inline-flex;align-items:center;gap:8px;padding:5px 14px;background:rgba(124,92,255,.12);border:1px solid rgba(124,92,255,.3);border-radius:100px;font-size:11px;font-weight:600;color:#b8a5ff;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px">
+        <div style="width:6px;height:6px;border-radius:50%;background:#7c5cff;box-shadow:0 0 8px #7c5cff;animation:pulse 1.5s infinite"></div>
+        <span data-en="Live Results" data-es="Resultados en Vivo">Live Results</span>
+      </div>
+      <h2 style="font-size:clamp(32px,5vw,58px);font-weight:700;letter-spacing:-2px;line-height:1;color:#fff;margin-bottom:16px">
+        <span data-en="Numbers that" data-es="Números que">Numbers that</span><br>
+        <span style="background:linear-gradient(135deg,#b8a5ff,#7c5cff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent" data-en="speak for themselves." data-es="hablan por sí solos.">speak for themselves.</span>
+      </h2>
+      <p style="font-size:15px;color:#a8a3c4;max-width:460px;margin:0 auto;line-height:1.65" data-en="Real metrics from real campaigns — every number earned through strategy, creativity and execution." data-es="Métricas reales de campañas reales — cada número ganado con estrategia y ejecución.">Real metrics from real campaigns — every number earned through strategy, creativity and execution.</p>
+    </div>
+
+    <!-- ORBIT + PANEL layout -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center" class="orbit-layout">
+
+      <!-- Canvas -->
+      <div class="reveal" style="position:relative;display:flex;align-items:center;justify-content:center;min-height:400px">
+        <canvas id="orbit3d-cv" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+
+        <!-- Center display -->
+        <div id="orbit-center-display" style="position:relative;z-index:2;text-align:center;transition:.4s cubic-bezier(.34,1.56,.64,1)">
+          <div id="ocd-ico" style="font-size:36px;margin-bottom:8px;filter:drop-shadow(0 0 16px rgba(124,92,255,.6))">🚀</div>
+          <div id="ocd-num" style="font-size:clamp(40px,6vw,64px);font-weight:800;letter-spacing:-3px;line-height:1;color:#b8a5ff;text-shadow:0 0 30px rgba(124,92,255,.5)">+487%</div>
+          <div id="ocd-label" style="font-size:12px;color:#a8a3c4;margin-top:6px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px">Average ROI</div>
+        </div>
+      </div>
+
+      <!-- Right: Stats list -->
+      <div style="display:flex;flex-direction:column;gap:12px">
+
+        <div class="orbit-stat reveal r-d1" data-ico="🚀" data-num="+487%" data-lbl="Average ROI" data-lbl-es="ROI Promedio" data-sub="Across all campaigns" data-sub-es="En todas las campañas" data-color="#7c5cff" onclick="selectOrbitStat(this)">
+          <div class="os-left">
+            <div class="os-ico" style="background:rgba(124,92,255,.15);border-color:rgba(124,92,255,.3)">🚀</div>
+            <div>
+              <div class="os-num" style="color:#b8a5ff" data-on="487" data-prefix="+" data-suffix="%">+0%</div>
+              <div class="os-lbl" data-en="Average ROI" data-es="ROI Promedio">Average ROI</div>
+            </div>
+          </div>
+          <div class="os-bar-wrap"><div class="os-bar" style="--ow:92%;background:linear-gradient(90deg,#7c5cff,#b8a5ff)"></div></div>
+        </div>
+
+        <div class="orbit-stat reveal r-d2" data-ico="📈" data-num="+125%" data-lbl="Traffic Growth" data-lbl-es="Crecimiento Tráfico" data-sub="Monthly average" data-sub-es="Promedio mensual" data-color="#10b981" onclick="selectOrbitStat(this)">
+          <div class="os-left">
+            <div class="os-ico" style="background:rgba(16,185,129,.12);border-color:rgba(16,185,129,.3)">📈</div>
+            <div>
+              <div class="os-num" style="color:#6ee7b7" data-on="125" data-prefix="+" data-suffix="%">+0%</div>
+              <div class="os-lbl" data-en="Traffic Growth" data-es="Crecimiento">Traffic Growth</div>
+            </div>
+          </div>
+          <div class="os-bar-wrap"><div class="os-bar" style="--ow:75%;background:linear-gradient(90deg,#10b981,#6ee7b7)"></div></div>
+        </div>
+
+        <div class="orbit-stat reveal r-d3" data-ico="🎯" data-num="350+" data-lbl="Qualified Leads" data-lbl-es="Leads Calificados" data-sub="Generated per month" data-sub-es="Por mes" data-color="#f59e0b" onclick="selectOrbitStat(this)">
+          <div class="os-left">
+            <div class="os-ico" style="background:rgba(245,158,11,.12);border-color:rgba(245,158,11,.3)">🎯</div>
+            <div>
+              <div class="os-num" style="color:#fcd34d" data-on="350" data-prefix="" data-suffix="+">0+</div>
+              <div class="os-lbl" data-en="Qualified Leads" data-es="Leads">Qualified Leads</div>
+            </div>
+          </div>
+          <div class="os-bar-wrap"><div class="os-bar" style="--ow:68%;background:linear-gradient(90deg,#f59e0b,#fcd34d)"></div></div>
+        </div>
+
+        <div class="orbit-stat reveal r-d4" data-ico="🌍" data-num="200+" data-lbl="Brands Served" data-lbl-es="Marcas Servidas" data-sub="Globally · 32+ countries" data-sub-es="Globalmente" data-color="#ec4899" onclick="selectOrbitStat(this)">
+          <div class="os-left">
+            <div class="os-ico" style="background:rgba(236,72,153,.12);border-color:rgba(236,72,153,.3)">🌍</div>
+            <div>
+              <div class="os-num" style="color:#f9a8d4" data-on="200" data-prefix="" data-suffix="+">0+</div>
+              <div class="os-lbl" data-en="Brands Served" data-es="Marcas">Brands Served</div>
+            </div>
+          </div>
+          <div class="os-bar-wrap"><div class="os-bar" style="--ow:85%;background:linear-gradient(90deg,#ec4899,#f9a8d4)"></div></div>
+        </div>
+
+        <div class="orbit-stat reveal r-d4" data-ico="⚡" data-num="24h" data-lbl="Response Time" data-lbl-es="Tiempo de Respuesta" data-sub="Always on · Always available" data-sub-es="Siempre disponibles" data-color="#06b6d4" onclick="selectOrbitStat(this)">
+          <div class="os-left">
+            <div class="os-ico" style="background:rgba(6,182,212,.12);border-color:rgba(6,182,212,.3)">⚡</div>
+            <div>
+              <div class="os-num" style="color:#67e8f9">24h</div>
+              <div class="os-lbl" data-en="Response Time" data-es="Respuesta">Response Time</div>
+            </div>
+          </div>
+          <div class="os-bar-wrap"><div class="os-bar" style="--ow:100%;background:linear-gradient(90deg,#06b6d4,#67e8f9)"></div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="reveal" style="text-align:center;margin-top:52px">
+      <a href="#contact" onclick="openModal('General Inquiry');return false;" class="btn-primary">
+        <span data-en="Start Your Campaign" data-es="Empieza Tu Campaña">Start Your Campaign</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </div>
+
+  <style>
+  .orbit-stat{
+    background:linear-gradient(180deg,var(--card,#15101f),var(--bg-2,#0d0a18));
+    border:1px solid rgba(124,92,255,.12);
+    border-radius:14px;padding:16px 18px;
+    cursor:pointer;
+    transition:all .3s cubic-bezier(.34,1.56,.64,1);
+    position:relative;overflow:hidden;
+  }
+  .orbit-stat::before{
+    content:'';position:absolute;left:0;top:0;bottom:0;
+    width:3px;border-radius:0 2px 2px 0;
+    background:linear-gradient(180deg,#7c5cff,#b8a5ff);
+    opacity:0;transition:.3s;
+  }
+  .orbit-stat:hover,.orbit-stat.active{
+    border-color:rgba(124,92,255,.35);
+    transform:translateX(6px);
+    box-shadow:0 8px 30px rgba(124,92,255,.15);
+  }
+  .orbit-stat:hover::before,.orbit-stat.active::before{opacity:1}
+  .os-left{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+  .os-ico{width:36px;height:36px;border-radius:10px;border:1px solid;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+  .os-num{font-size:22px;font-weight:800;letter-spacing:-1px;line-height:1;margin-bottom:2px}
+  .os-lbl{font-size:11px;color:#a8a3c4;font-weight:500}
+  .os-bar-wrap{height:3px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden}
+  .os-bar{height:100%;border-radius:2px;width:0;transition:width 1.6s cubic-bezier(.34,1.56,.64,1)}
+
+  @media(max-width:768px){
+    .orbit-layout{grid-template-columns:1fr !important;gap:20px}
+    #orbit3d-cv{height:260px !important}
+  }
+  </style>
+
+  <script>
+  (function(){
+    // Canvas orbit animation
+    var cv=document.getElementById('orbit3d-cv');
+    if(!cv)return;
+    var cx=cv.getContext('2d');
+    var W,H,t=0;
+
+    function rz(){
+      var dpr=window.devicePixelRatio||1;
+      W=cv.offsetWidth;H=cv.offsetHeight;
+      cv.width=W*dpr;cv.height=H*dpr;
+      cx.setTransform(dpr,0,0,dpr,0,0);
+    }
+    rz();window.addEventListener('resize',rz);
+
+    var orbs=[
+      {r:0.28,speed:.009,angle:0,color:'#7c5cff',size:6,trail:[]},
+      {r:0.38,speed:.006,angle:2.1,color:'#10b981',size:5,trail:[]},
+      {r:0.48,speed:.004,angle:4.2,color:'#f59e0b',size:5,trail:[]},
+      {r:0.22,speed:.014,angle:1,color:'#ec4899',size:4,trail:[]},
+      {r:0.42,speed:.007,angle:3.5,color:'#06b6d4',size:5,trail:[]},
+    ];
+
+    var particles=[];
+    for(var i=0;i<35;i++){
+      particles.push({
+        x:Math.random()*100,y:Math.random()*100,
+        vx:(Math.random()-.5)*.12,vy:(Math.random()-.5)*.12,
+        r:Math.random()*1.4+.4,
+        o:Math.random()*.4+.15,
+        pulse:Math.random()*Math.PI*2,
+        pv:.02+Math.random()*.02
+      });
+    }
+
+    function frame(){
+      cx.clearRect(0,0,W,H);
+      t+=.008;
+      var cx2=W/2,cy2=H/2;
+      var baseR=Math.min(W,H)*.42;
+
+      // Particles
+      particles.forEach(function(p){
+        p.x+=p.vx;p.y+=p.vy;p.pulse+=p.pv;
+        if(p.x<0||p.x>100)p.vx*=-1;
+        if(p.y<0||p.y>100)p.vy*=-1;
+        var scale=1+Math.sin(p.pulse)*.3;
+        cx.beginPath();cx.arc(p.x*W/100,p.y*H/100,p.r*scale,0,Math.PI*2);
+        cx.fillStyle='rgba(124,92,255,'+p.o+')';cx.fill();
+      });
+
+      // Orbit rings
+      [.28,.38,.48,.22,.42].forEach(function(r,i){
+        cx.beginPath();cx.arc(cx2,cy2,r*baseR,0,Math.PI*2);
+        cx.strokeStyle='rgba(124,92,255,'+(0.06+i*.01)+')';
+        cx.lineWidth=1;cx.setLineDash([4,8]);cx.stroke();cx.setLineDash([]);
+      });
+
+      // Center glow
+      var cg=cx.createRadialGradient(cx2,cy2,0,cx2,cy2,baseR*.2);
+      cg.addColorStop(0,'rgba(124,92,255,.18)');cg.addColorStop(1,'transparent');
+      cx.fillStyle=cg;cx.beginPath();cx.arc(cx2,cy2,baseR*.2,0,Math.PI*2);cx.fill();
+
+      // Orbiting dots
+      orbs.forEach(function(o){
+        o.angle+=o.speed;
+        var x=cx2+Math.cos(o.angle)*o.r*baseR;
+        var y=cy2+Math.sin(o.angle)*o.r*baseR*.65;
+
+        // Store trail
+        o.trail.push({x:x,y:y});
+        if(o.trail.length>18)o.trail.shift();
+
+        // Draw trail
+        o.trail.forEach(function(pt,i){
+          var alpha=.04*(i/o.trail.length);
+          cx.beginPath();cx.arc(pt.x,pt.y,o.size*(i/o.trail.length)*.7,0,Math.PI*2);
+          var rr=parseInt(o.color.slice(1,3),16);
+          var gg=parseInt(o.color.slice(3,5),16);
+          var bb=parseInt(o.color.slice(5,7),16);
+          cx.fillStyle='rgba('+rr+','+gg+','+bb+','+alpha+')';
+          cx.fill();
+        });
+
+        // Glow
+        var rr=parseInt(o.color.slice(1,3),16);
+        var gg=parseInt(o.color.slice(3,5),16);
+        var bb=parseInt(o.color.slice(5,7),16);
+        cx.beginPath();cx.arc(x,y,o.size*2.5,0,Math.PI*2);
+        cx.fillStyle='rgba('+rr+','+gg+','+bb+',.12)';cx.fill();
+        // Core
+        cx.beginPath();cx.arc(x,y,o.size,0,Math.PI*2);
+        cx.fillStyle=o.color;cx.fill();
+        // Highlight
+        cx.beginPath();cx.arc(x-o.size*.3,y-o.size*.3,o.size*.35,0,Math.PI*2);
+        cx.fillStyle='rgba(255,255,255,.4)';cx.fill();
+      });
+
+      requestAnimationFrame(frame);
+    }
+    frame();
+
+    // Click stat → update center
+    window.selectOrbitStat=function(el){
+      document.querySelectorAll('.orbit-stat').forEach(function(s){s.classList.remove('active')});
+      el.classList.add('active');
+      var ico=el.getAttribute('data-ico');
+      var num=el.getAttribute('data-num');
+      var lbl=el.getAttribute('data-lbl');
+      var lang=document.documentElement.getAttribute('data-lang')||'en';
+      if(lang==='es'){lbl=el.getAttribute('data-lbl-es')||lbl;}
+      var display=document.getElementById('orbit-center-display');
+      display.style.opacity='0';display.style.transform='scale(.9)';
+      setTimeout(function(){
+        document.getElementById('ocd-ico').textContent=ico;
+        document.getElementById('ocd-num').textContent=num;
+        document.getElementById('ocd-label').textContent=lbl;
+        display.style.opacity='1';display.style.transform='scale(1)';
+      },200);
+    };
+    // Set first active
+    var first=document.querySelector('.orbit-stat');
+    if(first)first.classList.add('active');
+
+    // Scroll observer — counters + bars
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting)return;
+        // Bars
+        e.target.querySelectorAll('.os-bar').forEach(function(b){
+          setTimeout(function(){
+            var w=getComputedStyle(b).getPropertyValue('--ow')||'80%';
+            b.style.width=w;
+          },300);
+        });
+        // Counters
+        e.target.querySelectorAll('[data-on]').forEach(function(el){
+          var t2=+el.getAttribute('data-on');
+          var pre=el.getAttribute('data-prefix')||'';
+          var suf=el.getAttribute('data-suffix')||'';
+          var dur=1800,s=performance.now();
+          (function r(n){var p=Math.min((n-s)/dur,1);var v=1-Math.pow(1-p,3);
+          el.textContent=pre+Math.round(v*t2)+suf;if(p<1)requestAnimationFrame(r);})(performance.now());
+        });
+        obs.unobserve(e.target);
+      });
+    },{threshold:.2});
+    var sec=document.getElementById('orbit-section');
+    if(sec)obs.observe(sec);
+  })();
+  </script>
+</section>
 <!-- TRUSTED -->
 <div class="trusted">
   <div class="trusted-label" data-en="Trusted by ambitious brands worldwide:" data-es="Marcas ambiciosas que confían en nosotros:">Trusted by ambitious brands worldwide:</div>
